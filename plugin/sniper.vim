@@ -24,7 +24,7 @@ function OpenSniperBuffer(buffer_function)
   execute a:buffer_function . ' ' . s:focus['tempFilename']
   execute 'set filetype=' . origin_filetype
   set bufhidden=wipe
-  autocmd BufWrite <buffer> silent call UpdateOriginBuffer()
+  autocmd BufWritePost <buffer> silent call UpdateOriginBuffer()
   setlocal noswapfile
 endfunction
 
